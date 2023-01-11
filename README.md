@@ -7,7 +7,8 @@
 **Posterior** - movie recommender system based on **poster** analysis.
 
 # Running
-To run the app use the following command:
+
+To run the app use the following command, which allows to augment data about movies in `assets/movies.yml` using [omdb](https://www.omdbapi.com/) api:
 
 ```sh
 julia --project=. posterior/main.jl
@@ -20,6 +21,14 @@ export JULIA_PROJECT=.
 
 julia posterior/main.jl
 ```
+
+The command generates file `assets/augmented-movies.yml` which can be renamed to `assets/movies.yml` by executing the following command:
+
+```sh
+./promote.sh
+```
+
+The older version of `assets/movies.yml` is also preserved as `assets/__movies.yml`
 
 # Installing julia
 

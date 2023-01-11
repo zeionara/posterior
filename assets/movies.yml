@@ -1,7 +1,21 @@
 items:
-  - title: Raw
+  - rating: 10.0
     year: 2016
-    poster: https://m.media-amazon.com/images/M/MV5BMTU3MDUxMDI0MV5BMl5BanBnXkFtZTgwMzk3OTg3MDI@._V1_.jpg
-    rating: 10
-  - title: Kicking blood
-    rating: 6
+    id: "raw"
+    title: "Raw"
+    poster: "https://m.media-amazon.com/images/M/MV5BMTU3MDUxMDI0MV5BMl5BanBnXkFtZTgwMzk3OTg3MDI@._V1_.jpg"
+  - rating: 6.0
+    year: 2021
+    id: "kicking-blood"
+    title: "Kicking blood"
+    poster: "https://m.media-amazon.com/images/M/MV5BYWY2Y2M4NWYtYzFkOC00ZTJiLThiNjQtMzVkZDllMzMzNWI3XkEyXkFqcGdeQXVyMzk4MzAwMg@@._V1_SX300.jpg"
+  - rating: 10.0
+    year: 2017
+    id: "mother"
+    title: "mother!"
+    poster: "https://m.media-amazon.com/images/M/MV5BMzc5ODExODE0MV5BMl5BanBnXkFtZTgwNDkzNDUxMzI@._V1_SX300.jpg"
+  - rating: 10.0
+    year: 2020
+    id: "perfect-enemy"
+    title: "Perfect enemy"
+    poster: "https://m.media-amazon.com/images/M/MV5BMDQ0YTg2YTAtY2QyNS00M2I1LWI1ZjUtNjYxYzVlNzI2N2Q1XkEyXkFqcGdeQXVyMTA0MjU0Ng@@._V1_SX300.jpg"
