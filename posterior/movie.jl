@@ -18,6 +18,10 @@ function get_id(movie :: Dict, title :: String) :: String
     get(movie, "id", replace(title_without_trailing_or_leading_special_characters |> lowercase, r"[^\w]+" => s"-"))
 end
 
+function get_extension(movie :: Movie) :: String
+    match(extension_regexp, movie.poster_url)[1]
+end
+
 function get_poster_local_path(movie :: Movie, root :: String = "assets/posters") :: String 
-    "$(root)/$(movie.id).$(match(extension_regexp, movie.poster_url)[1])"
+    "$(root)/$(movie.id).$(get_extension(movie))"
 end

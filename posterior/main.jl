@@ -1,3 +1,5 @@
+#!/usr/bin/julia
+
 import YAML
 import HTTP
 import JSON
