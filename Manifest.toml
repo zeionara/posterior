@@ -2,7 +2,7 @@
 
 julia_version = "1.9.0-beta2"
 manifest_format = "2.0"
-project_hash = "9c439f8500490549e25481136f7185cbfafb13fb"
+project_hash = "c61f859c2eb1a69569210c5d857ffe0805cefc89"
 
 [[deps.AbstractFFTs]]
 deps = ["ChainRulesCore", "LinearAlgebra"]
@@ -744,6 +744,12 @@ uuid = "de0858da-6303-5e67-8744-51eddeeeb8d7"
 [[deps.Profile]]
 deps = ["Printf"]
 uuid = "9abbd945-dff8-562f-b5e8-e1ebf5ef1b79"
+
+[[deps.ProgressBars]]
+deps = ["Printf"]
+git-tree-sha1 = "806ebc92e1b4b4f72192369a28dfcaf688566b2b"
+uuid = "49802e3a-d2f1-5c88-81d8-b72133a6f568"
+version = "1.4.1"
 
 [[deps.ProgressLogging]]
 deps = ["Logging", "SHA", "UUIDs"]
