@@ -19,7 +19,7 @@ movies = read_movies()
 posters = (movie -> get_poster_local_path(movie, "assets/posters/resized") |> load |> channelview).(movies)
 ratings = trunc.(Int, (movie -> movie.rating).(movies))
 
-# println(size(posters))
+println(size(posters[1]))
 # println(ratings)
 
 batch_size = 2
@@ -74,7 +74,7 @@ n_epochs = 10
 
 for i in 1:n_epochs
     println("Running $(i)th epoch")
-    Flux.train!(L, parameters, posters, opt; cb = Flux.throttle(update_loss!, 8)) 
+    Flux.train!(L, parameters, batches, opt; cb = Flux.throttle(update_loss!, 8)) 
 end
 
 println("Train losses:")
