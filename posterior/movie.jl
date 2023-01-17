@@ -3,15 +3,31 @@ import YAML
 extension_regexp = r"\.([^.]+)$"
 
 struct Movie 
-    title :: String
-    poster_url :: String
-    rating :: Float64
-    year :: Int16
-    id :: String
+    title :: Union{String, Missing}
+    poster_url :: Union{String, Missing}
+    rating :: Union{Float64, Missing}
+    year :: Union{Int16, Missing}
+    id :: Union{String, Missing}
+end
+
+struct nullable{T} end
+
+function nullable{T}(value :: Union{T, Missing}) :: Union{T, Symbol} where T
+    if ismissing(value)
+        :null
+    else
+        value
+    end
 end
 
 function asDict(movie :: Movie) :: Dict 
-    Dict("title" => movie.title, "poster" => movie.poster_url, "rating" => movie.rating, "year" => movie.year, "id" => movie.id)
+    Dict(
+         "title" => movie.title |> nullable{String},
+         "poster" => movie.poster_url |> nullable{String},
+         "rating" => movie.rating |> nullable{Float64},
+         "year" => movie.year |> nullable{Int16},
+         "id" => movie.id |> nullable{String}
+    )
 end
 
 function get_id(movie :: Dict, title :: AbstractString) :: String
@@ -20,12 +36,28 @@ function get_id(movie :: Dict, title :: AbstractString) :: String
     get(movie, "id", replace(title_without_trailing_or_leading_special_characters |> lowercase, r"[^\w]+" => s"-"))
 end
 
-function get_extension(movie :: Movie) :: String
-    match(extension_regexp, movie.poster_url)[1]
+function get_extension(movie :: Movie) :: Union{String, Missing}
+    if ismissing(movie.poster_url)
+        missing
+    else
+        matched = match(extension_regexp, movie.poster_url)
+
+        if isnothing(matched)
+            missing
+        else
+            matched[1]
+        end
+    end
 end
 
-function get_poster_local_path(movie :: Movie, root :: AbstractString = "assets/posters") :: String 
-    "$(root)/$(movie.id).$(get_extension(movie))"
+function get_poster_local_path(movie :: Movie, root :: AbstractString = "assets/posters") :: Union{String, Missing} 
+    extension = get_extension(movie)
+
+    if ismissing(extension)
+        missing
+    else
+       "$(root)/$(movie.id).$(extension)"
+    end
 end
 
 function read_movies(path :: AbstractString = "assets/movies.yml") :: Vector{Movie}
