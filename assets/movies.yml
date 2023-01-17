@@ -1,21 +1,1561 @@
 items:
-  - rating: 10.0
-    year: 2016
-    id: "raw"
-    title: "Raw"
-    poster: "https://m.media-amazon.com/images/M/MV5BMTU3MDUxMDI0MV5BMl5BanBnXkFtZTgwMzk3OTg3MDI@._V1_.jpg"
-  - rating: 6.0
-    year: 2021
-    id: "kicking-blood"
-    title: "Kicking blood"
-    poster: "https://m.media-amazon.com/images/M/MV5BYWY2Y2M4NWYtYzFkOC00ZTJiLThiNjQtMzVkZDllMzMzNWI3XkEyXkFqcGdeQXVyMzk4MzAwMg@@._V1_SX300.jpg"
-  - rating: 10.0
-    year: 2017
-    id: "mother"
-    title: "mother!"
-    poster: "https://m.media-amazon.com/images/M/MV5BMzc5ODExODE0MV5BMl5BanBnXkFtZTgwNDkzNDUxMzI@._V1_SX300.jpg"
-  - rating: 10.0
-    year: 2020
-    id: "perfect-enemy"
-    title: "Perfect enemy"
-    poster: "https://m.media-amazon.com/images/M/MV5BMDQ0YTg2YTAtY2QyNS00M2I1LWI1ZjUtNjYxYzVlNzI2N2Q1XkEyXkFqcGdeQXVyMTA0MjU0Ng@@._V1_SX300.jpg"
+  - year: 1948
+    rating: 5
+    title: "Rope"
+  - year: 1957
+    rating: 9
+    title: "Det sjunde inseglet"
+  - year: 1957
+    rating: 9
+    title: "Smultronstället"
+  - year: 1959
+    rating: 6
+    title: "Hiroshima mon amour"
+  - year: 1960
+    rating: 4
+    title: "Psycho"
+  - year: 1971
+    rating: 6
+    title: "The Beguiled"
+  - year: 1972
+    rating: 6
+    title: "Solyaris"
+  - year: 1975
+    rating: 10
+    title: "Zerkalo"
+  - year: 1975
+    rating: 10
+    title: "One Flew Over the Cuckoo's Nest"
+  - year: 1976
+    rating: 6
+    title: "Taxi Driver"
+  - year: 1977
+    rating: 5
+    title: "Suspiria"
+  - year: 1979
+    rating: 8
+    title: "Stalker"
+  - year: 1980
+    rating: 4
+    title: "The Shining"
+  - year: 1985
+    rating: 7
+    title: "Back to the Future"
+  - year: 1986
+    rating: 7
+    title: "Offret"
+  - year: 1988
+    rating: 7
+    title: "They Live"
+  - year: 1988
+    rating: 8
+    title: "The Naked Gun: From the Files of Police Squad!"
+  - year: 1989
+    rating: 4
+    title: "Pet Sematary"
+  - year: 1990
+    rating: 10
+    title: "Twin Peaks"
+  - year: 1989
+    rating: 6
+    title: "Back to the Future Part II"
+  - year: 1990
+    rating: 9
+    title: "Mr. Bean"
+  - year: 1990
+    rating: 5
+    title: "Back to the Future Part III"
+  - year: 1990
+    rating: 7
+    title: "Ghost"
+  - year: 1990
+    rating: 8
+    title: "Home Alone"
+  - year: 1991
+    rating: 8
+    title: "The Naked Gun 2½: The Smell of Fear"
+  - year: 1992
+    rating: 10
+    title: "Twin Peaks: Fire Walk with Me"
+  - year: 1992
+    rating: 5
+    title: "Home Alone 2: Lost in New York"
+  - year: 1993
+    rating: 7
+    title: "Groundhog Day"
+  - year: 1993
+    rating: 6
+    title: "Jûbê ninpûchô"
+  - year: 1994
+    rating: 7
+    title: "Naked Gun 33 1/3: The Final Insult"
+  - year: 1994
+    rating: 10
+    title: "Friends"
+  - year: 1996
+    rating: 4
+    title: "Trainspotting"
+  - year: 1997
+    rating: 10
+    title: "Lost Highway"
+  - year: 1997
+    rating: 7
+    title: "Knockin' on Heaven's Door"
+  - year: 1997
+    rating: 8
+    title: "Knocking on Heaven's Door"
+  - year: 1997
+    rating: 8
+    title: "Bean"
+  - year: 1997
+    rating: 8
+    title: "Pâfekuto burû"
+  - year: 1997
+    rating: 7
+    title: "Titanic"
+  - year: 1997
+    rating: 4
+    title: "Home Alone 3"
+  - year: 1998
+    rating: 6
+    title: "The Truman Show"
+  - year: 1999
+    rating: 5
+    title: "The Mummy"
+  - year: 1999
+    rating: 9
+    title: "The Virgin Suicides"
+  - year: 1999
+    rating: 7
+    title: "The Straight Story"
+  - year: 1999
+    rating: 6
+    title: "American Pie"
+  - year: 1999
+    rating: 6
+    title: "Fight Club"
+  - year: 1999
+    rating: 6
+    title: "Stuart Little"
+  - year: 2000
+    rating: 5
+    title: "Final Destination"
+  - year: 2000
+    rating: 8
+    title: "Requiem for a Dream"
+  - year: 2000
+    rating: 10
+    title: "Sånger från andra våningen"
+  - year: 2000
+    rating: 8
+    title: "Scary Movie"
+  - year: 2000
+    rating: 6
+    title: "102 Dalmatians"
+  - year: 2001
+    rating: 10
+    title: "Shrek"
+  - year: 2001
+    rating: 10
+    title: "Mulholland Dr."
+  - year: 2001
+    rating: 6
+    title: "Scary Movie 2"
+  - year: 2001
+    rating: 9
+    title: "Harry Potter and the Sorcerer's Stone"
+  - year: 2001
+    rating: 6
+    title: "The Lord of the Rings: The Fellowship of the Ring"
+  - year: 2002
+    rating: 10
+    title: "Chobits"
+  - year: 2002
+    rating: 6
+    title: "Spider-Man"
+  - year: 2002
+    rating: 8
+    title: "Irréversible"
+  - year: 2002
+    rating: 5
+    title: "Scooby-Doo"
+  - year: 2002
+    rating: 6
+    title: "Stuart Little 2"
+  - year: 2002
+    rating: 7
+    title: "The Ring"
+  - year: 2002
+    rating: 8
+    title: "Harry Potter and the Chamber of Secrets"
+  - year: 2002
+    rating: 3
+    title: "The Wonderful World of Disney: Home Alone 4: Taking Back the House"
+  - year: 2002
+    rating: 6
+    title: "The Lord of the Rings: The Two Towers"
+  - year: 2003
+    rating: 6
+    title: "Final Destination 2"
+  - year: 2003
+    rating: 6
+    title: "Pirates of the Caribbean: The Curse of the Black Pearl"
+  - year: 2003
+    rating: 5
+    title: "Coffee and Cigarettes"
+  - year: 2003
+    rating: 7
+    title: "Scary Movie 3"
+  - year: 2003
+    rating: 6
+    title: "The Lord of the Rings: The Return of the King"
+  - year: 2003
+    rating: 8
+    title: "Saw"
+  - year: 2004
+    rating: 7
+    title: "Saw"
+  - year: 2004
+    rating: 9
+    title: "Shrek 2"
+  - year: 2004
+    rating: 7
+    title: "Harry Potter and the Prisoner of Azkaban"
+  - year: 2004
+    rating: 6
+    title: "Garfield"
+  - year: 2004
+    rating: 6
+    title: "Spider-Man 2"
+  - year: 2004
+    rating: 10
+    title: "Erufen rîto"
+  - year: 2004
+    rating: 6
+    title: "Cashback"
+  - year: 2004
+    rating: 8
+    title: "Joey"
+  - year: 2004
+    rating: 6
+    title: "4"
+  - year: 2004
+    rating: 5
+    title: "The Grudge"
+  - year: 2005
+    rating: 6
+    title: "White Noise"
+  - year: 2005
+    rating: 5
+    title: "The Ring Two"
+  - year: 2005
+    rating: 9
+    title: "The Office"
+  - year: 2005
+    rating: 5
+    title: "The Amityville Horror"
+  - year: 2005
+    rating: 9
+    title: "Madagascar"
+  - year: 2005
+    rating: 7
+    title: "Charlie and the Chocolate Factory"
+  - year: 2005
+    rating: 10
+    title: "The Skeleton Key"
+  - year: 2005
+    rating: 5
+    title: "Hostel"
+  - year: 2005
+    rating: 5
+    title: "Saw II"
+  - year: 2005
+    rating: 7
+    title: "Harry Potter and the Goblet of Fire"
+  - year: 2005
+    rating: 6
+    title: "King Kong"
+  - year: 2005
+    rating: 6
+    title: "The Chronicles of Narnia: The Lion, the Witch and the Wardrobe"
+  - year: 2006
+    rating: 5
+    title: "Final Destination 3"
+  - year: 2006
+    rating: 6
+    title: "Silent Hill"
+  - year: 2007
+    rating: 10
+    title: "The Big Bang Theory"
+  - year: 2006
+    rating: 5
+    title: "Garfield: A Tale of Two Kitties"
+  - year: 2006
+    rating: 5
+    title: "Tochka"
+  - year: 2006
+    rating: 8
+    title: "Pirates of the Caribbean: Dead Man's Chest"
+  - year: 2006
+    rating: 6
+    title: "Khottabych"
+  - year: 2006
+    rating: 10
+    title: "The Fountain"
+  - year: 2006
+    rating: 7
+    title: "Perfume: The Story of a Murderer"
+  - year: 2006
+    rating: 6
+    title: "Cashback"
+  - year: 2006
+    rating: 7
+    title: "Saw III"
+  - year: 2006
+    rating: 6
+    title: "Arthur et les Minimoys"
+  - year: 2006
+    rating: 6
+    title: "Night at the Museum"
+  - year: 2007
+    rating: 7
+    title: "Ghost Rider"
+  - year: 2007
+    rating: 6
+    title: "Dead Silence"
+  - year: 2007
+    rating: 8
+    title: "Mr. Bean's Holiday"
+  - year: 2007
+    rating: 7
+    title: "Spider-Man 3"
+  - year: 2007
+    rating: 6
+    title: "Shrek the Third"
+  - year: 2007
+    rating: 7
+    title: "4 luni, 3 saptamâni si 2 zile"
+  - year: 2007
+    rating: 6
+    title: "Pirates of the Caribbean: At World's End"
+  - year: 2007
+    rating: 6
+    title: "Chacun son cinéma ou Ce petit coup au coeur quand la lumière s'éteint et que le film commence"
+  - year: 2007
+    rating: 7
+    title: "Du levande"
+  - year: 2007
+    rating: 3
+    title: "Transformers"
+  - year: 2007
+    rating: 5
+    title: "1408"
+  - year: 2007
+    rating: 8
+    title: "Gruz 200"
+  - year: 2007
+    rating: 6
+    title: "Harry Potter and the Order of the Phoenix"
+  - year: 2007
+    rating: 7
+    title: "Shrooms"
+  - year: 2007
+    rating: 7
+    title: "Ef: A Tale of Memories."
+  - year: 2007
+    rating: 7
+    title: "Paranormal Activity"
+  - year: 2007
+    rating: 6
+    title: "Saw IV"
+  - year: 2007
+    rating: 7
+    title: "Sweeney Todd: The Demon Barber of Fleet Street"
+  - year: 2007
+    rating: 6
+    title: "Alvin and the Chipmunks"
+  - year: 2008
+    rating: 3
+    title: "Samyy luchshiy film"
+  - year: 2008
+    rating: 6
+    title: "Iron Man"
+  - year: 2008
+    rating: 5
+    title: "The Chronicles of Narnia: Prince Caspian"
+  - year: 2008
+    rating: 8
+    title: "Kung Fu Panda"
+  - year: 2008
+    rating: 3
+    title: "The Incredible Hulk"
+  - year: 2008
+    rating: 5
+    title: "Journey to the Center of the Earth"
+  - year: 2008
+    rating: 7
+    title: "The Dark Knight"
+  - year: 2008
+    rating: 6
+    title: "Eden Lake"
+  - year: 2008
+    rating: 7
+    title: "Mirrors"
+  - year: 2008
+    rating: 5
+    title: "Univer"
+  - year: 2008
+    rating: 7
+    title: "Saw V"
+  - year: 2008
+    rating: 7
+    title: "Madagascar: Escape 2 Africa"
+  - year: 2008
+    rating: 4
+    title: "Transporter 3"
+  - year: 2009
+    rating: 6
+    title: "Friday the 13th"
+  - year: 2009
+    rating: 6
+    title: "The Last House on the Left"
+  - year: 2009
+    rating: 7
+    title: "Drag Me to Hell"
+  - year: 2009
+    rating: 7
+    title: "The Haunting in Connecticut"
+  - year: 2009
+    rating: 5
+    title: "X-Men Origins: Wolverine"
+  - year: 2009
+    rating: 6
+    title: "Night at the Museum: Battle of the Smithsonian"
+  - year: 2009
+    rating: 6
+    title: "Terminator Salvation"
+  - year: 2009
+    rating: 6
+    title: "Tsar"
+  - year: 2009
+    rating: 10
+    title: "Enter the Void"
+  - year: 2009
+    rating: 5
+    title: "Transformers: Revenge of the Fallen"
+  - year: 2009
+    rating: 7
+    title: "Hachi: A Dog's Tale"
+  - year: 2009
+    rating: 7
+    title: "Harry Potter and the Half-Blood Prince"
+  - year: 2009
+    rating: 4
+    title: "G-Force"
+  - year: 2009
+    rating: 7
+    title: "Orphan"
+  - year: 2009
+    rating: 5
+    title: "G.I. Joe: The Rise of Cobra"
+  - year: 2009
+    rating: 6
+    title: "The Collector"
+  - year: 2009
+    rating: 7
+    title: "District 9"
+  - year: 2009
+    rating: 6
+    title: "Case 39"
+  - year: 2009
+    rating: 7
+    title: "Kanikuly strogogo rezhima"
+  - year: 2009
+    rating: 7
+    title: "The Final Destination"
+  - year: 2009
+    rating: 8
+    title: "Rammstein: Pussy"
+  - year: 2009
+    rating: 7
+    title: "Law Abiding Citizen"
+  - year: 2009
+    rating: 6
+    title: "Surrogates"
+  - year: 2009
+    rating: 6
+    title: "Splice"
+  - year: 2009
+    rating: 6
+    title: "Saw VI"
+  - year: 2009
+    rating: 7
+    title: "2012"
+  - year: 2009
+    rating: 7
+    title: "Misfits"
+  - year: 2009
+    rating: 5
+    title: "Arthur et la vengeance de Maltazard"
+  - year: 2009
+    rating: 7
+    title: "Avatar"
+  - year: 2009
+    rating: 6
+    title: "Sherlock Holmes"
+  - year: 2009
+    rating: 9
+    title: "Pop"
+  - year: 2010
+    rating: 6
+    title: "Shkola"
+  - year: 2010
+    rating: 5
+    title: "Alice in Wonderland"
+  - year: 2010
+    rating: 6
+    title: "Hot Tub Time Machine"
+  - year: 2010
+    rating: 6
+    title: "Clash of the Titans"
+  - year: 2010
+    rating: 6
+    title: "6 Souls"
+  - year: 2010
+    rating: 7
+    title: "Interny"
+  - year: 2010
+    rating: 6
+    title: "Shrek Forever After"
+  - year: 2010
+    rating: 6
+    title: "Iron Man 2"
+  - year: 2010
+    rating: 6
+    title: "I Spit on Your Grave"
+  - year: 2010
+    rating: 6
+    title: "The Last Exorcism"
+  - year: 2010
+    rating: 5
+    title: "The Last Airbender"
+  - year: 2010
+    rating: 7
+    title: "Inception"
+  - year: 2010
+    rating: 5
+    title: "Piranha 3D"
+  - year: 2010
+    rating: 10
+    title: "Black Swan"
+  - year: 2010
+    rating: 7
+    title: "Insidious"
+  - year: 2010
+    rating: 6
+    title: "Devil"
+  - year: 2010
+    rating: 5
+    title: "Mirrors 2"
+  - year: 2010
+    rating: 6
+    title: "Paranormal Activity 2"
+  - year: 2010
+    rating: 7
+    title: "Saw 3D"
+  - year: 2010
+    rating: 5
+    title: "Realnye patsany"
+  - year: 2010
+    rating: 4
+    title: "Skyline"
+  - year: 2010
+    rating: 6
+    title: "Harry Potter and the Deathly Hallows: Part 1"
+  - year: 2010
+    rating: 4
+    title: "Paranômaru akutibiti: Dai-2-shô - Tokyo Night"
+  - year: 2010
+    rating: 7
+    title: "Tron"
+  - year: 2011
+    rating: 5
+    title: "A torinói ló"
+  - year: 2011
+    rating: 8
+    title: "Sucker Punch"
+  - year: 2011
+    rating: 7
+    title: "PiraMMMida"
+  - year: 2011
+    rating: 4
+    title: "Scream 4"
+  - year: 2011
+    rating: 4
+    title: "Thor"
+  - year: 2011
+    rating: 7
+    title: "Pirates of the Caribbean: On Stranger Tides"
+  - year: 2011
+    rating: 9
+    title: "The Tree of Life"
+  - year: 2011
+    rating: 4
+    title: "Melancholia"
+  - year: 2011
+    rating: 6
+    title: "Kung Fu Panda 2"
+  - year: 2011
+    rating: 3
+    title: "Green Lantern"
+  - year: 2011
+    rating: 5
+    title: "Transformers: Dark of the Moon"
+  - year: 2011
+    rating: 8
+    title: "Harry Potter and the Deathly Hallows - Part 2"
+  - year: 2011
+    rating: 4
+    title: "Rise of the Planet of the Apes"
+  - year: 2011
+    rating: 7
+    title: "Final Destination 5"
+  - year: 2011
+    rating: 7
+    title: "You're Next"
+  - year: 2011
+    rating: 3
+    title: "Intouchables"
+  - year: 2011
+    rating: 7
+    title: "Paranormal Activity 3"
+  - year: 2011
+    rating: 6
+    title: "Cassadaga"
+  - year: 2011
+    rating: 5
+    title: "Vysotskiy. Spasibo, chto zhivoy"
+  - year: 2011
+    rating: 6
+    title: "Sherlock Holmes: A Game of Shadows"
+  - year: 2011
+    rating: 7
+    title: "Ghost Rider: Spirit of Vengeance"
+  - year: 2011
+    rating: 4
+    title: "The Cabin in the Woods"
+  - year: 2011
+    rating: 7
+    title: "The Girl with the Dragon Tattoo"
+  - year: 2011
+    rating: 4
+    title: "The Darkest Hour"
+  - year: 2012
+    rating: 6
+    title: "The Devil Inside"
+  - year: 2012
+    rating: 4
+    title: "Journey 2: The Mysterious Island"
+  - year: 2012
+    rating: 6
+    title: "Compliance"
+  - year: 2012
+    rating: 7
+    title: "V/H/S"
+  - year: 2012
+    rating: 4
+    title: "The Woman in Black"
+  - year: 2012
+    rating: 7
+    title: "Sinister"
+  - year: 2012
+    rating: 6
+    title: "The Hunger Games"
+  - year: 2012
+    rating: 5
+    title: "Battleship"
+  - year: 2012
+    rating: 7
+    title: "Prometheus"
+  - year: 2012
+    rating: 4
+    title: "Piranha 3DD"
+  - year: 2012
+    rating: 5
+    title: "Madagascar 3: Europe's Most Wanted"
+  - year: 2012
+    rating: 8
+    title: "Dupa dealuri"
+  - year: 2012
+    rating: 7
+    title: "The Amazing Spider-Man"
+  - year: 2012
+    rating: 9
+    title: "Doch"
+  - year: 2012
+    rating: 7
+    title: "The Dark Knight Rises"
+  - year: 2012
+    rating: 9
+    title: "Cloud Atlas"
+  - year: 2012
+    rating: 5
+    title: "The Collection"
+  - year: 2012
+    rating: 7
+    title: "Life of Pi"
+  - year: 2012
+    rating: 7
+    title: "Psycho-Pass"
+  - year: 2012
+    rating: 6
+    title: "Paranormal Activity 4"
+  - year: 2012
+    rating: 6
+    title: "Kukhnya"
+  - year: 2012
+    rating: 7
+    title: "1210"
+  - year: 2012
+    rating: 8
+    title: "Rasskazy"
+  - year: 2012
+    rating: 6
+    title: "The Hobbit: An Unexpected Journey"
+  - year: 2013
+    rating: 5
+    title: "Movie 43"
+  - year: 2013
+    rating: 6
+    title: "Hansel & Gretel: Witch Hunters"
+  - year: 2013
+    rating: 8
+    title: "V/H/S/2"
+  - year: 2013
+    rating: 5
+    title: "La religieuse"
+  - year: 2013
+    rating: 7
+    title: "Oblivion"
+  - year: 2013
+    rating: 8
+    title: "Scary Movie 5"
+  - year: 2013
+    rating: 6
+    title: "Iron Man Three"
+  - year: 2013
+    rating: 9
+    title: "Borgman"
+  - year: 2013
+    rating: 6
+    title: "Now You See Me"
+  - year: 2013
+    rating: 8
+    title: "Intimnye mesta"
+  - year: 2013
+    rating: 5
+    title: "The Conjuring"
+  - year: 2013
+    rating: 9
+    title: "Dialogi"
+  - year: 2013
+    rating: 4
+    title: "Pacific Rim"
+  - year: 2013
+    rating: 6
+    title: "Gravity"
+  - year: 2013
+    rating: 7
+    title: "Oculus"
+  - year: 2013
+    rating: 7
+    title: "Insidious: Chapter 2"
+  - year: 2013
+    rating: 10
+    title: "Autumn Blood"
+  - year: 2013
+    rating: 7
+    title: "Thor: The Dark World"
+  - year: 2013
+    rating: 7
+    title: "The Hobbit: The Desolation of Smaug"
+  - year: 2014
+    rating: 6
+    title: "Paranormal Activity: The Marked Ones"
+  - year: 2014
+    rating: 7
+    title: "Devil's Due"
+  - year: 2014
+    rating: 3
+    title: "The Babadook"
+  - year: 2014
+    rating: 7
+    title: "Viy"
+  - year: 2014
+    rating: 7
+    title: "13 Sins"
+  - year: 2014
+    rating: 4
+    title: "Divergent"
+  - year: 2014
+    rating: 5
+    title: "The Quiet Ones"
+  - year: 2014
+    rating: 4
+    title: "Fizruk"
+  - year: 2014
+    rating: 6
+    title: "The Amazing Spider-Man 2"
+  - year: 2014
+    rating: 10
+    title: "A Million Ways to Die in the West"
+  - year: 2014
+    rating: 10
+    title: "Kis Uykusu"
+  - year: 2014
+    rating: 8
+    title: "Plemya"
+  - year: 2014
+    rating: 6
+    title: "Maleficent"
+  - year: 2014
+    rating: 10
+    title: "Zvezda"
+  - year: 2014
+    rating: 6
+    title: "Transformers: Age of Extinction"
+  - year: 2014
+    rating: 5
+    title: "Unfriended"
+  - year: 2014
+    rating: 7
+    title: "Guardians of the Galaxy"
+  - year: 2014
+    rating: 6
+    title: "V/H/S Viral"
+  - year: 2014
+    rating: 5
+    title: "The Imitation Game"
+  - year: 2014
+    rating: 9
+    title: "En duva satt på en gren och funderade på tillvaron"
+  - year: 2014
+    rating: 5
+    title: "Annabelle"
+  - year: 2014
+    rating: 6
+    title: "Interstellar"
+  - year: 2014
+    rating: 7
+    title: "The Hobbit: The Battle of the Five Armies"
+  - year: 2014
+    rating: 6
+    title: "Night at the Museum: Secret of the Tomb"
+  - year: 2015
+    rating: 8
+    title: "Knock Knock"
+  - year: 2015
+    rating: 6
+    title: "The Lazarus Effect"
+  - year: 2015
+    rating: 5
+    title: "Lady of Csejte"
+  - year: 2015
+    rating: 7
+    title: "III"
+  - year: 2015
+    rating: 8
+    title: "Landmine Goes Click"
+  - year: 2015
+    rating: 7
+    title: "Excess Flesh"
+  - year: 2015
+    rating: 6
+    title: "We Are Still Here"
+  - year: 2015
+    rating: 4
+    title: "Prizrak"
+  - year: 2015
+    rating: 9
+    title: "Smertelno zhivoy"
+  - year: 2015
+    rating: 6
+    title: "We Are Monsters"
+  - year: 2015
+    rating: 8
+    title: "Parlor"
+  - year: 2015
+    rating: 7
+    title: "Il racconto dei racconti - Tale of Tales"
+  - year: 2015
+    rating: 8
+    title: "Youth"
+  - year: 2015
+    rating: 6
+    title: "Insidious: Chapter 3"
+  - year: 2015
+    rating: 5
+    title: "Jurassic World"
+  - year: 2015
+    rating: 4
+    title: "Paren s nashego kladbishcha"
+  - year: 2015
+    rating: 8
+    title: "Ant-Man"
+  - year: 2015
+    rating: 7
+    title: "The Gallows"
+  - year: 2015
+    rating: 8
+    title: "Dead Slow Ahead"
+  - year: 2015
+    rating: 5
+    title: "Sinister 2"
+  - year: 2015
+    rating: 6
+    title: "The Visit"
+  - year: 2015
+    rating: 6
+    title: "Last Girl Standing"
+  - year: 2015
+    rating: 5
+    title: "Pikovaya dama. Chyornyy obryad"
+  - year: 2015
+    rating: 8
+    title: "Endorphine"
+  - year: 2015
+    rating: 8
+    title: "Into the Forest"
+  - year: 2015
+    rating: 6
+    title: "The Ones Below"
+  - year: 2015
+    rating: 5
+    title: "Southbound"
+  - year: 2015
+    rating: 7
+    title: "Izmeny"
+  - year: 2015
+    rating: 6
+    title: "Paranormal Activity: The Ghost Dimension"
+  - year: 2015
+    rating: 8
+    title: "Manifesto"
+  - year: 2015
+    rating: 7
+    title: "The Revenant"
+  - year: 2015
+    rating: 9
+    title: "Córki dancingu"
+  - year: 2016
+    rating: 6
+    title: "Mafiya: Igra na vyzhivanie"
+  - year: 2016
+    rating: 3
+    title: "The 5th Wave"
+  - year: 2016
+    rating: 7
+    title: "Kung Fu Panda 3"
+  - year: 2016
+    rating: 3
+    title: "The Boy"
+  - year: 2016
+    rating: 7
+    title: "Fifty Shades of Black"
+  - year: 2016
+    rating: 6
+    title: "Tenemos la carne"
+  - year: 2016
+    rating: 5
+    title: "Chempiony: Bystree. Vyshe. Silnee"
+  - year: 2016
+    rating: 4
+    title: "10 Cloverfield Lane"
+  - year: 2016
+    rating: 7
+    title: "Pet"
+  - year: 2016
+    rating: 7
+    title: "Don't Breathe"
+  - year: 2016
+    rating: 4
+    title: "Marshrut postroen"
+  - year: 2016
+    rating: 4
+    title: "The Ticket"
+  - year: 2016
+    rating: 9
+    title: "(M)uchenik"
+  - year: 2016
+    rating: 5
+    title: "The Conjuring 2"
+  - year: 2016
+    rating: 8
+    title: "Ah-ga-ssi"
+  - year: 2016
+    rating: 10
+    title: "Grave"
+  - year: 2016
+    rating: 8
+    title: "La tortue rouge"
+  - year: 2016
+    rating: 6
+    title: "Bacalaureat"
+  - year: 2016
+    rating: 10
+    title: "The Neon Demon"
+  - year: 2016
+    rating: 4
+    title: "Lights Out"
+  - year: 2016
+    rating: 6
+    title: "Guilt"
+  - year: 2016
+    rating: 4
+    title: "Ghostbusters"
+  - year: 2016
+    rating: 4
+    title: "Suicide Squad"
+  - year: 2016
+    rating: 7
+    title: "The 9th Life of Louis Drax"
+  - year: 2016
+    rating: 6
+    title: "Una"
+  - year: 2016
+    rating: 10
+    title: "Nocturnal Animals"
+  - year: 2016
+    rating: 10
+    title: "The Bad Batch"
+  - year: 2016
+    rating: 7
+    title: "Split"
+  - year: 2016
+    rating: 7
+    title: "Fucking Berlin"
+  - year: 2016
+    rating: 9
+    title: "Sofichka"
+  - year: 2016
+    rating: 10
+    title: "Silence"
+  - year: 2017
+    rating: 5
+    title: "Grazhdanskiy brak"
+  - year: 2017
+    rating: 6
+    title: "A Dog's Purpose"
+  - year: 2017
+    rating: 4
+    title: "Nevesta"
+  - year: 2017
+    rating: 9
+    title: "A Ghost Story"
+  - year: 2017
+    rating: 6
+    title: "The Party"
+  - year: 2017
+    rating: 10
+    title: "Twin Peaks"
+  - year: 2017
+    rating: 9
+    title: "Guardians of the Galaxy Vol. 2"
+  - year: 2017
+    rating: 6
+    title: "Filfak"
+  - year: 2017
+    rating: 6
+    title: "Voice from the Stone"
+  - year: 2017
+    rating: 7
+    title: "Nashla kosa na kamen"
+  - year: 2017
+    rating: 9
+    title: "Yazichniki"
+  - year: 2017
+    rating: 4
+    title: "Okja"
+  - year: 2017
+    rating: 5
+    title: "The Square"
+  - year: 2017
+    rating: 5
+    title: "The Killing of a Sacred Deer"
+  - year: 2017
+    rating: 7
+    title: "The Beguiled"
+  - year: 2017
+    rating: 8
+    title: "Tesnota"
+  - year: 2017
+    rating: 9
+    title: "Krotkaya"
+  - year: 2017
+    rating: 7
+    title: "Annabelle: Creation"
+  - year: 2017
+    rating: 10
+    title: "Meshok bez dna"
+  - year: 2017
+    rating: 6
+    title: "Inconceivable"
+  - year: 2017
+    rating: 10
+    title: "Thelma"
+  - year: 2017
+    rating: 4
+    title: "Three Billboards Outside Ebbing, Missouri"
+  - year: 2017
+    rating: 10
+    title: "Mother!"
+  - year: 2017
+    rating: 8
+    title: "The Death of Stalin"
+  - year: 2017
+    rating: 9
+    title: "Apostasy"
+  - year: 2017
+    rating: 8
+    title: "Euphoria"
+  - year: 2017
+    rating: 6
+    title: "Dark"
+  - year: 2017
+    rating: 10
+    title: "Blue My Mind"
+  - year: 2017
+    rating: 6
+    title: "Blade Runner 2049"
+  - year: 2017
+    rating: 7
+    title: "Muse"
+  - year: 2017
+    rating: 7
+    title: "Thor: Ragnarok"
+  - year: 2017
+    rating: 7
+    title: "Wonder Wheel"
+  - year: 2017
+    rating: 10
+    title: "Tri sestry"
+  - year: 2017
+    rating: 7
+    title: "Aquarians"
+  - year: 2017
+    rating: 7
+    title: "The Place"
+  - year: 2018
+    rating: 7
+    title: "Hippopotamus"
+  - year: 2018
+    rating: 10
+    title: "Ophelia"
+  - year: 2018
+    rating: 7
+    title: "Black Panther"
+  - year: 2018
+    rating: 6
+    title: "Winchester"
+  - year: 2018
+    rating: 6
+    title: "Inkan, gongkan, sikan grigo inkan"
+  - year: 2018
+    rating: 5
+    title: "A Quiet Place"
+  - year: 2018
+    rating: 10
+    title: "One Strange Rock"
+  - year: 2018
+    rating: 10
+    title: "Braid"
+  - year: 2018
+    rating: 7
+    title: "Avengers: Infinity War"
+  - year: 2018
+    rating: 6
+    title: "Sobibor"
+  - year: 2018
+    rating: 10
+    title: "O Grande Circo Místico"
+  - year: 2018
+    rating: 10
+    title: "Climax"
+  - year: 2018
+    rating: 4
+    title: "Ahlat Agaci"
+  - year: 2018
+    rating: 7
+    title: "Glubokie reki"
+  - year: 2018
+    rating: 7
+    title: "Cam"
+  - year: 2018
+    rating: 5
+    title: "Malicious"
+  - year: 2018
+    rating: 5
+    title: "The Convent"
+  - year: 2018
+    rating: 10
+    title: "Suspiria"
+  - year: 2018
+    rating: 7
+    title: "High Life"
+  - year: 2018
+    rating: 6
+    title: "A Simple Favor"
+  - year: 2018
+    rating: 5
+    title: "In Fabric"
+  - year: 2018
+    rating: 10
+    title: "Ashes in the Snow"
+  - year: 2018
+    rating: 10
+    title: "Starfish"
+  - year: 2018
+    rating: 5
+    title: "Aquaman"
+  - year: 2019
+    rating: 7
+    title: "The Lodge"
+  - year: 2019
+    rating: 5
+    title: "Paradise Hills"
+  - year: 2019
+    rating: 7
+    title: "Alita: Battle Angel"
+  - year: 2019
+    rating: 10
+    title: "Eld & lågor"
+  - year: 2019
+    rating: 7
+    title: "Molodoe vino"
+  - year: 2019
+    rating: 6
+    title: "Ready or Not"
+  - year: 2019
+    rating: 10
+    title: "Dolor y gloria"
+  - year: 2019
+    rating: 7
+    title: "Shazam!"
+  - year: 2019
+    rating: 10
+    title: "Rammstein: Deutschland"
+  - year: 2019
+    rating: 8
+    title: "Schaste - eto... 2"
+  - year: 2019
+    rating: 7
+    title: "Avengers: Endgame"
+  - year: 2019
+    rating: 7
+    title: "Koridor bessmertiya"
+  - year: 2019
+    rating: 10
+    title: "Lvx Æterna"
+  - year: 2019
+    rating: 6
+    title: "Vivarium"
+  - year: 2019
+    rating: 10
+    title: "A Hidden Life"
+  - year: 2019
+    rating: 8
+    title: "Portrait de la jeune fille en feu"
+  - year: 2019
+    rating: 10
+    title: "It Must Be Heaven"
+  - year: 2019
+    rating: 6
+    title: "Myslennyy volk"
+  - year: 2019
+    rating: 8
+    title: "Hurt by Paradise"
+  - year: 2019
+    rating: 7
+    title: "Midsommar"
+  - year: 2019
+    rating: 8
+    title: "Joker"
+  - year: 2019
+    rating: 8
+    title: "Om det oändliga"
+  - year: 2019
+    rating: 6
+    title: "The Other Lamb"
+  - year: 2019
+    rating: 4
+    title: "The Vigil"
+  - year: 2019
+    rating: 6
+    title: "Il peccato"
+  - year: 2020
+    rating: 6
+    title: "In Passing"
+  - year: 2020
+    rating: 10
+    title: "Summertime"
+  - year: 2020
+    rating: 8
+    title: "Beast Beast"
+  - year: 2020
+    rating: 8
+    title: "Promising Young Woman"
+  - year: 2020
+    rating: 6
+    title: "Gretel & Hansel"
+  - year: 2020
+    rating: 7
+    title: "The Roads Not Taken"
+  - year: 2020
+    rating: 10
+    title: "Cosmos: Possible Worlds"
+  - year: 2020
+    rating: 1
+    title: "Steuben County"
+  - year: 2020
+    rating: 6
+    title: "The War with Grandpa"
+  - year: 2020
+    rating: 7
+    title: "Kitoboy"
+  - year: 2020
+    rating: 9
+    title: "Like a House on Fire"
+  - year: 2020
+    rating: 6
+    title: "The Devil All the Time"
+  - year: 2020
+    rating: 4
+    title: "Bone Cage"
+  - year: 2020
+    rating: 10
+    title: "Rifkin's Festival"
+  - year: 2020
+    rating: 8
+    title: "What Breaks the Ice"
+  - year: 2020
+    rating: 7
+    title: "The Special"
+  - year: 2020
+    rating: 6
+    title: "Nocturne"
+  - year: 2020
+    rating: 6
+    title: "Painter"
+  - year: 2020
+    rating: 10
+    title: "A Perfect Enemy"
+  - year: 2021
+    rating: 10
+    title: "Dvorets dlya Putina. Istoriya samoy bolshoy vzyatki"
+  - year: 2021
+    rating: 7
+    title: "The Alpines"
+  - year: 2021
+    rating: 7
+    title: "Topi"
+  - year: 2021
+    rating: 10
+    title: "Pleasure"
+  - year: 2021
+    rating: 7
+    title: "The Blazing World"
+  - year: 2021
+    rating: 10
+    title: "AINBO: Spirit of the Amazon"
+  - year: 2021
+    rating: 8
+    title: "Raya and the Last Dragon"
+  - year: 2021
+    rating: 10
+    title: "The Fallout"
+  - year: 2021
+    rating: 8
+    title: "Our Father"
+  - year: 2021
+    rating: 8
+    title: "Chikatilo"
+  - year: 2021
+    rating: 9
+    title: "A Beautiful Curse"
+  - year: 2021
+    rating: 7
+    title: "Happy End"
+  - year: 2021
+    rating: 5
+    title: "Voyage Into the Night"
+  - year: 2021
+    rating: 7
+    title: "Voyagers"
+  - year: 2021
+    rating: 10
+    title: "West Michigan"
+  - year: 2021
+    rating: 7
+    title: "Things Heard & Seen"
+  - year: 2021
+    rating: 6
+    title: "We Need to Do Something"
+  - year: 2021
+    rating: 6
+    title: "No Man of God"
+  - year: 2021
+    rating: 7
+    title: "I mysi patrí do nebe"
+  - year: 2021
+    rating: 8
+    title: "Italian Studies"
+  - year: 2021
+    rating: 9
+    title: "The Last Bus"
+  - year: 2021
+    rating: 10
+    title: "Madison and the Happiness Jar"
+  - year: 2021
+    rating: 9
+    title: "Rien à foutre"
+  - year: 2021
+    rating: 8
+    title: "Vortex"
+  - year: 2021
+    rating: 6
+    title: "Don't Breathe 2"
+  - year: 2021
+    rating: 7
+    title: "Un rescate de huevitos"
+  - year: 2021
+    rating: 8
+    title: "About Pie"
+  - year: 2021
+    rating: 7
+    title: "He's All That"
+  - year: 2021
+    rating: 10
+    title: "Defining Moments"
+  - year: 2021
+    rating: 10
+    title: "Madres paralelas"
+  - year: 2021
+    rating: 7
+    title: "I Dream of a Psychopomp"
+  - year: 2021
+    rating: 7
+    title: "Earwig"
+  - year: 2021
+    rating: 6
+    title: "Kicking Blood"
+  - year: 2021
+    rating: 5
+    title: "Dashcam"
+  - year: 2021
+    rating: 6
+    title: "The Guilty"
+  - year: 2021
+    rating: 6
+    title: "Venom: Let There Be Carnage"
+  - year: 2021
+    rating: 7
+    title: "Ojing-eo geim"
+  - year: 2021
+    rating: 6
+    title: "Kazn"
+  - year: 2021
+    rating: 6
+    title: "The Tragedy of Macbeth"
+  - year: 2021
+    rating: 10
+    title: "V/H/S/94"
+  - year: 2021
+    rating: 7
+    title: "Veneciafrenia"
+  - year: 2021
+    rating: 7
+    title: "Antlers"
+  - year: 2021
+    rating: 6
+    title: "Paranormal Activity: Next of Kin"
+  - year: 2021
+    rating: 9
+    title: "The Nanny's Night"
+  - year: 2021
+    rating: 7
+    title: "Encanto"
+  - year: 2021
+    rating: 10
+    title: "Nightmare Alley"
+  - year: 2022
+    rating: 8
+    title: "Watcher"
+  - year: 2022
+    rating: 7
+    title: "Donkeyhead"
+  - year: 2022
+    rating: 7
+    title: "Summering"
+  - year: 2022
+    rating: 10
+    title: "Navalny"
+  - year: 2022
+    rating: 6
+    title: "Death on the Nile"
+  - year: 2022
+    rating: 7
+    title: "The Ledge"
+  - year: 2022
+    rating: 7
+    title: "Spin Me Round"
+  - year: 2022
+    rating: 7
+    title: "The Mulligan"
+  - year: 2022
+    rating: 9
+    title: "Moloch"
+  - year: 2022
+    rating: 3
+    title: "Men"
+  - year: 2022
+    rating: 6
+    title: "Aftersun"
+  - year: 2022
+    rating: 10
+    title: "God's Waiting Room"
+  - year: 2022
+    rating: 7
+    title: "Adeline"
+  - year: 2022
+    rating: 10
+    title: "Luck"
+  - year: 2022
+    rating: 9
+    title: "Swamp Lion"
+  - year: 2022
+    rating: 5
+    title: "Who Invited Them"
+  - year: 2022
+    rating: 1
+    title: "The Lord of the Rings: The Rings of Power"
+  - year: 2022
+    rating: 6
+    title: "1899"
+  - year: 2022
+    rating: 5
+    title: "Jeepers Creepers: Reborn"
+  - year: 2022
+    rating: 10
+    title: "V/H/S/99"
+  - year: 2022
+    rating: 10
+    title: "10 Tricks"
+  - year: 2022
+    rating: 5
+    title: "Guillermo del Toro's Cabinet of Curiosities: Lot 36"
+  - year: 2022
+    rating: 4
+    title: "Guillermo del Toro's Cabinet of Curiosities: Graveyard Rats"
+  - year: 2022
+    rating: 4
+    title: "Guillermo del Toro's Cabinet of Curiosities"
