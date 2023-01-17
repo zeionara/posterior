@@ -4,6 +4,8 @@ import YAML
 import HTTP
 import JSON
 
+using ProgressMeter
+
 include("utils/string.jl")
 
 include("movie.jl")
@@ -11,6 +13,8 @@ include("movie.jl")
 api_key = get(ENV, "OMDB_API_KEY", missing)
 
 data = YAML.load_file("assets/movies.yml")
+
+progress_bar = Progress(length(data["items"]), desc = "augmenting data:", showspeed = true)
 
 movies = map(data["items"]) do movie
     movie = if (haskey(movie, "poster") && haskey(movie, "title") && haskey(movie, "rating") && haskey(movie, "year"))
@@ -33,9 +37,11 @@ movies = map(data["items"]) do movie
         download(movie.poster_url, poster_local_path)
     end
 
+    next!(progress_bar)
+
     movie
 end
 
-println(movies)
+# println(movies)
 
 YAML.write_file("assets/augmented-movies.yml", Dict("items" => map(asDict, movies)))
