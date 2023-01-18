@@ -7,6 +7,7 @@ import JSON
 using ProgressMeter
 
 include("utils/string.jl")
+include("utils/nullable.jl")
 
 include("movie.jl")
 
@@ -20,14 +21,6 @@ function get_response_field(response, field) :: Union{String, Missing}
     value = get(response, field, missing)
 
     if value == "N/A"
-        missing
-    else
-        value
-    end
-end
-
-function nothing_to_missing(value)
-    if isnothing(value)
         missing
     else
         value

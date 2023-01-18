@@ -12,11 +12,13 @@ include("movie.jl")
 include("batch.jl")
 
 n_epochs = 10
-batch_size = 2
+batch_size = 16
 
 max_rating = 10
 
-movies = read_movies()
+movies = filter(read_movies()) do movie
+    !ismissing(movie.poster_url)
+end
 
 posters = (movie -> permutedims(get_poster_local_path(movie, "assets/posters/resized") |> load |> channelview, (2, 3, 1))).(movies)
 ratings = trunc.(Int, (movie -> movie.rating).(movies))

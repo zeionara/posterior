@@ -2,6 +2,8 @@ import YAML
 
 extension_regexp = r"\.([^.]+)$"
 
+include("utils/nullable.jl")
+
 struct Movie 
     title :: Union{String, Missing}
     poster_url :: Union{String, Missing}
@@ -64,5 +66,14 @@ end
 
 function read_movies(path :: AbstractString = "assets/movies.yml") :: Vector{Movie}
     data = YAML.load_file(path)
-    (movie -> Movie(movie["title"], movie["poster"], movie["rating"], movie["year"], movie["id"], movie["imdb_id"])).(data["items"])
+    (
+        movie -> Movie(
+            movie["title"] |> nothing_to_missing,
+            movie["poster"] |> nothing_to_missing,
+            movie["rating"] |> nothing_to_missing,
+            movie["year"] |> nothing_to_missing,
+            movie["id"] |> nothing_to_missing,
+            movie["imdb_id"] |> nothing_to_missing
+        )
+    ).(data["items"])
 end

@@ -8,8 +8,16 @@ include("movie.jl")
 movies = read_movies()
 
 function resize(movie :: Movie, width :: Int64 = 256, height :: Int64 = 256)
-    poster = movie |> get_poster_local_path |> load
-    save(get_poster_local_path(movie, "assets/posters/resized"), imresize(poster, width, height))
+    resized_poster_path = get_poster_local_path(movie, "assets/posters/resized")
+
+    if ismissing(resized_poster_path)
+        @warn "Missing poster for movie $(movie.id) (imdb-id = $(movie.imdb_id))"
+    else
+        if !isfile(resized_poster_path)
+            poster = movie |> get_poster_local_path |> load
+            save(resized_poster_path, imresize(poster, width, height))
+        end
+    end
 
     next!(progress_bar)
 end
