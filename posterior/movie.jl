@@ -8,6 +8,7 @@ struct Movie
     rating :: Union{Float64, Missing}
     year :: Union{Int16, Missing}
     id :: Union{String, Missing}
+    imdb_id :: Union{String, Missing}
 end
 
 struct nullable{T} end
@@ -26,7 +27,8 @@ function asDict(movie :: Movie) :: Dict
          "poster" => movie.poster_url |> nullable{String},
          "rating" => movie.rating |> nullable{Float64},
          "year" => movie.year |> nullable{Int16},
-         "id" => movie.id |> nullable{String}
+         "id" => movie.id |> nullable{String},
+         "imdb_id" => movie.imdb_id |> nullable{String}
     )
 end
 
@@ -62,5 +64,5 @@ end
 
 function read_movies(path :: AbstractString = "assets/movies.yml") :: Vector{Movie}
     data = YAML.load_file(path)
-    (movie -> Movie(movie["title"], movie["poster"], movie["rating"], movie["year"], movie["id"])).(data["items"])
+    (movie -> Movie(movie["title"], movie["poster"], movie["rating"], movie["year"], movie["id"], movie["imdb_id"])).(data["items"])
 end

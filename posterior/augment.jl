@@ -34,26 +34,37 @@ function nothing_to_missing(value)
     end
 end
 
+function deduplicate_id(id)
+    if !ismissing(id)
+        if id in seen_ids
+            if haskey(duplicate_counters, id)
+                id = "$id-$(duplicate_counters[id])"
+                duplicate_counters[id] += 1
+            else
+                id = "$id-2"
+                duplicate_counters[id] = 3
+            end
+        else
+            push!(seen_ids, id)
+        end
+    end
+    id
+end
+
 seen_ids = Set{String}()
+duplicate_counters = Dict{String, Int}()
 
 movies = map(data["items"]) do movie
-    movie = if (haskey(movie, "poster") && haskey(movie, "title") && haskey(movie, "rating") && haskey(movie, "year"))
+    movie = if (haskey(movie, "poster") && haskey(movie, "title") && haskey(movie, "rating") && haskey(movie, "year") && haskey(movie, "imdb_id"))
         id = get_id(movie, movie["title"])
-
-        if !ismissing(id)
-            if id in seen_ids
-                throw(ArgumentError("Duplicated movie id: $id"))  
-            else
-                push!(seen_ids, id)
-            end
-        end
 
         Movie(
             movie["title"] |> nothing_to_missing,
             movie["poster"] |> nothing_to_missing,
             movie["rating"] |> nothing_to_missing,
             movie["year"] |> nothing_to_missing,
-            id |> nothing_to_missing
+            id |> deduplicate_id |> nothing_to_missing,
+            movie["imdb_id"] |> nothing_to_missing
         )
     else
         # name = get(movie, "imdb_id", movie["title"])
@@ -71,7 +82,7 @@ movies = map(data["items"]) do movie
 
         response = HTTP.request("GET", url).body |> String |> JSON.parse
 
-        println(response)
+        # println(response)
 
         rating = 
           if haskey(movie, "rating")
@@ -117,13 +128,13 @@ movies = map(data["items"]) do movie
 
         id = ismissing(title) ? missing : get_id(movie, title)
 
-        if !ismissing(id)
-            if id in seen_ids
-                throw(ArgumentError("Duplicated movie id: $id"))  
-            else
-                push!(seen_ids, id)
-            end
-        end
+        # if !ismissing(id)
+        #     if id in seen_ids
+        #         throw(ArgumentError("Duplicated movie id: $id"))  
+        #     else
+        #         push!(seen_ids, id)
+        #     end
+        # end
 
         # print(id)
 
@@ -141,7 +152,8 @@ movies = map(data["items"]) do movie
           #     )[1]
           #   )
           # ),
-          id
+          id |> deduplicate_id,
+          get_response_field(response, "imdbID")
         )
     end
 
