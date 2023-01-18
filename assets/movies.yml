@@ -351,7 +351,7 @@ items:
     poster: "https://m.media-amazon.com/images/M/MV5BNzA5ZDNlZWMtM2NhNS00NDJjLTk4NDItYTRmY2EwMWZlMTY3XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SX300.jpg"
   - rating: 8.0
     year: 2003
-    id: "saw"
+    id: "saw-short"
     title: "Saw"
     poster: "https://m.media-amazon.com/images/M/MV5BMWRlNGUzNGMtMWZkMi00M2ZmLWI3YmUtZGRjYjBmOGZmZGEyXkEyXkFqcGdeQXVyNjk1Njg5NTA@._V1_SX300.jpg"
   - rating: 7.0
@@ -386,7 +386,7 @@ items:
     poster: "https://m.media-amazon.com/images/M/MV5BMDU1ZmQwZTQtZjg1OS00YzhhLWE0MTEtYjYxNzdkNzk2NWVkXkEyXkFqcGdeQXVyNTk5NTQ1NzM@._V1_SX300.jpg"
   - rating: 6.0
     year: 2004
-    id: "cashback"
+    id: "cashback-short"
     title: "Cashback"
     poster: "https://m.media-amazon.com/images/M/MV5BMTMwMTgyMTY2MV5BMl5BanBnXkFtZTYwNzk1Nzg2._V1_SX300.jpg"
   - rating: 8.0
@@ -1761,7 +1761,7 @@ items:
     poster: "https://m.media-amazon.com/images/M/MV5BMTUzMTgzMjYzMF5BMl5BanBnXkFtZTgwNzk0NzgzMzI@._V1_SX300.jpg"
   - rating: 10.0
     year: 2017
-    id: "twin-peaks"
+    id: "twin-peaks-season-3"
     title: "Twin Peaks"
     poster: "https://m.media-amazon.com/images/M/MV5BZWZiNWI0MzgtMDMyYS00NDY2LWI0Y2YtNTQ2ZWJhNzU2NTEyXkEyXkFqcGdeQXVyOTA3MTMyOTk@._V1_SX300.jpg"
   - rating: 9.0
@@ -1806,7 +1806,7 @@ items:
     poster: "https://m.media-amazon.com/images/M/MV5BMjU4NDcwOTA2NF5BMl5BanBnXkFtZTgwMjE2OTg4MzI@._V1_SX300.jpg"
   - rating: 7.0
     year: 2017
-    id: "the-beguiled"
+    id: "the-beguiled-remake"
     title: "The Beguiled"
     poster: "https://m.media-amazon.com/images/M/MV5BMTg5NjY3NDYxMl5BMl5BanBnXkFtZTgwMjI5ODgyMjI@._V1_SX300.jpg"
   - rating: 8.0
@@ -1996,7 +1996,7 @@ items:
     poster: "https://m.media-amazon.com/images/M/MV5BYzcxYzBiZDYtMjhlMy00MWQxLTliY2ItZmY2YTk5ZGZhM2FiXkEyXkFqcGdeQXVyMjU3NTI0Mg@@._V1_SX300.jpg"
   - rating: 10.0
     year: 2018
-    id: "suspiria"
+    id: "suspiria-remake"
     title: "Suspiria"
     poster: "https://m.media-amazon.com/images/M/MV5BMjQ2MTIyNjM2MF5BMl5BanBnXkFtZTgwMDE3NDMyNjM@._V1_SX300.jpg"
   - rating: 7.0

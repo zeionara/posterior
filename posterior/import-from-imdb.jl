@@ -11,7 +11,7 @@ df = path |> CSV.File |> DataFrame
 df = sort(df, "Release Date")[:, ["Your Rating", "Title", "Year", "Const"]]
 
 # describe(df) |> println
-println(df.Year)
+# println(df.Year)
 
 items = map(df |> eachrow) do row
     Dict(:rating => row."Your Rating", :title => row.Title, :year => row.Year, :imdb_id => row.Const)

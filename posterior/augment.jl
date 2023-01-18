@@ -26,9 +26,35 @@ function get_response_field(response, field) :: Union{String, Missing}
     end
 end
 
+function nothing_to_missing(value)
+    if isnothing(value)
+        missing
+    else
+        value
+    end
+end
+
+seen_ids = Set{String}()
+
 movies = map(data["items"]) do movie
     movie = if (haskey(movie, "poster") && haskey(movie, "title") && haskey(movie, "rating") && haskey(movie, "year"))
-        Movie(movie["title"], movie["poster"], movie["rating"], movie["year"], get_id(movie, movie["title"]))
+        id = get_id(movie, movie["title"])
+
+        if !ismissing(id)
+            if id in seen_ids
+                throw(ArgumentError("Duplicated movie id: $id"))  
+            else
+                push!(seen_ids, id)
+            end
+        end
+
+        Movie(
+            movie["title"] |> nothing_to_missing,
+            movie["poster"] |> nothing_to_missing,
+            movie["rating"] |> nothing_to_missing,
+            movie["year"] |> nothing_to_missing,
+            id |> nothing_to_missing
+        )
     else
         # name = get(movie, "imdb_id", movie["title"])
         # response = Dict{String, Any}("Director" => "Edward A. Palmer", "BoxOffice" => "N/A", "Country" => "United Kingdom", "Writer" => "Edward A. Palmer", "Actors" => "Ingvild Deila, Stuart Mortimer", "Awards" => "N/A", "Genre" => "Drama, Thriller", "Response" => "True", "Runtime" => "77 min", "imdbRating" => "N/A", "imdbVotes" => "N/A", "Rated" => "N/A", "Metascore" => "N/A", "Plot" => "Ruby has been kidnapped, but her kidnapper doesn't want a ransom. He wants her to fall in love with him.", "Website" => "N/A", "Year" => "2015", "Title" => "Hippopotamus", "Language" => "English", "Released" => "N/A", "Poster" => "N/A", "DVD" => "N/A", "imdbID" => "tt3755154", "Ratings" => Any[], "Type" => "movie", "Production" => "N/A")
@@ -90,6 +116,14 @@ movies = map(data["items"]) do movie
         # println(year)
 
         id = ismissing(title) ? missing : get_id(movie, title)
+
+        if !ismissing(id)
+            if id in seen_ids
+                throw(ArgumentError("Duplicated movie id: $id"))  
+            else
+                push!(seen_ids, id)
+            end
+        end
 
         # print(id)
 
