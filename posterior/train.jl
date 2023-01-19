@@ -94,7 +94,7 @@ for i in 1:n_epochs
     # next!(progress_bar; showvalues = [(:loss, Flux.crossentropy.(all_batch |> model |> eachcol, all_y |> eachcol) |> mean)])
 
     loss = map(batches) do (x, y)
-        Flux.crossentropy.(x |> device |> model |> cpu |> eachcol, y |> eachcol) |> mean
+        Flux.crossentropy.(x |> device |> model |> cpu |> eachcol, y |> eachcol)
     end |> flatten |> mean
 
     next!(progress_bar; showvalues = [(:loss, loss)])
