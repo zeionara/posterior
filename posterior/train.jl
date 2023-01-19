@@ -2,30 +2,66 @@
 
 using FileIO, Images
 using Flux
+using CUDA
 
 using Statistics
 # using Printf
 
 using ProgressMeter
+using ArgParse
 
 include("movie.jl")
 include("batch.jl")
 
-n_epochs = 10
-batch_size = 16
+function parse_arguments()
+    s = ArgParseSettings()
+
+    @add_arg_table s begin
+        "--cpu", "-c"
+            help = "Use cpu for model training"
+            action = :store_true
+        "--n-epochs", "-n"
+            help = "Number of training iterations"
+            arg_type = Int
+            default = 10
+        "--batch-size", "-b"
+            help = "Number of images passed to model at once"
+            arg_type = Int
+            default = 16
+        "--n-items", "-i"
+            help = "Number of movies to take from the dataset"
+            arg_type = Int
+            default = nothing
+    end
+
+    return parse_args(s)
+end
+
+args = parse_arguments()
+
+# println(args)
+
+device = args["cpu"] ? cpu : gpu
+
+n_epochs = args["n-epochs"]
+batch_size = args["batch-size"]
 
 max_rating = 10
 
-movies = filter(read_movies()) do movie
+movies = filter(isnothing(args["n-items"]) ? read_movies() : read_movies()[1:min(args["n-items"], end)]) do movie
     !ismissing(movie.poster_url)
 end
 
+# posters = (movie -> permutedims(get_poster_local_path(movie, "assets/posters/resized") |> load |> channelview, (2, 3, 1)) |> device).(movies)
 posters = (movie -> permutedims(get_poster_local_path(movie, "assets/posters/resized") |> load |> channelview, (2, 3, 1))).(movies)
 ratings = trunc.(Int, (movie -> movie.rating).(movies))
 
-batches = make_batches(posters, ratings; batch_size = batch_size)
+# println("foo")
+batches = make_batches(posters, ratings; batch_size = batch_size, device = device)
+# println("finished making batches")
+# println(size(batches, 1))
 
-all_batch, all_y = make_all_batch(posters, ratings)
+all_batch, all_y = make_all_batch(posters, ratings; device = device)
 
 model = Chain(
     Conv((3, 3), 3 => 32, relu; pad = (1, 1)),
@@ -37,7 +73,7 @@ model = Chain(
     Flux.flatten,
     Dense(131072, max_rating),
     softmax
-)
+) |> device
 
 opt_state = Flux.setup(Adam(), model)
 
@@ -52,6 +88,7 @@ for i in 1:n_epochs
     end
 
     # push!(train_loss, Flux.crossentropy.(all_batch |> model |> eachcol, all_y |> eachcol) |> mean)
+    # println("next epoch")
     next!(progress_bar; showvalues = [(:loss, Flux.crossentropy.(all_batch |> model |> eachcol, all_y |> eachcol) |> mean)])
 end
 
