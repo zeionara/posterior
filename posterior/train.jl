@@ -5,6 +5,7 @@ using Flux
 using CUDA
 
 using Statistics
+using Base.Iterators
 # using Printf
 
 using ProgressMeter
@@ -57,11 +58,11 @@ posters = (movie -> permutedims(get_poster_local_path(movie, "assets/posters/res
 ratings = trunc.(Int, (movie -> movie.rating).(movies))
 
 # println("foo")
-batches = make_batches(posters, ratings; batch_size = batch_size, device = device)
+batches = make_batches(posters, ratings; batch_size = batch_size)
 # println("finished making batches")
 # println(size(batches, 1))
 
-all_batch, all_y = make_all_batch(posters, ratings; device = device)
+# all_batch, all_y = make_all_batch(posters, ratings; device = device)
 
 model = Chain(
     Conv((3, 3), 3 => 32, relu; pad = (1, 1)),
@@ -84,12 +85,19 @@ for i in 1:n_epochs
     # println("Running $(i)th epoch")
 
     Flux.train!(model, batches, opt_state) do m, x, y
-        Flux.crossentropy(x |> m, y)
+        Flux.crossentropy(x |> device |> m, y |> device)
     end
 
     # push!(train_loss, Flux.crossentropy.(all_batch |> model |> eachcol, all_y |> eachcol) |> mean)
     # println("next epoch")
-    next!(progress_bar; showvalues = [(:loss, Flux.crossentropy.(all_batch |> model |> eachcol, all_y |> eachcol) |> mean)])
+    # next!(progress_bar; showvalues = [(:loss, Flux.crossentropy.(all_batch |> model |> eachcol, all_y |> eachcol) |> mean)])
+    # next!(progress_bar; showvalues = [(:loss, Flux.crossentropy.(all_batch |> model |> eachcol, all_y |> eachcol) |> mean)])
+
+    loss = map(batches) do (x, y)
+        Flux.crossentropy.(x |> device |> model |> cpu |> eachcol, y |> eachcol) |> mean
+    end |> flatten |> mean
+
+    next!(progress_bar; showvalues = [(:loss, loss)])
 end
 
 # println("Train losses:")

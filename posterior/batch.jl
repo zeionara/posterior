@@ -3,7 +3,7 @@ using Base.Iterators
 
 using CUDA
 
-function make_batch(X, Y; indices, max_rating :: Integer = 10, device = cpu)
+function make_batch(X, Y; indices, max_rating :: Integer = 10)
     X_batch = Array{Float32}(undef, size(X[1])..., length(indices))  # create an empty array
 
     for i in 1:length(indices)
@@ -12,12 +12,12 @@ function make_batch(X, Y; indices, max_rating :: Integer = 10, device = cpu)
 
     Y_batch = onehotbatch(Y[indices], 1:max_rating)
 
-    (X_batch |> device, Y_batch |> device)
+    (X_batch, Y_batch)
 end
 
-function make_batches(X, Y; batch_size :: Integer, max_rating :: Integer = 10, device = cpu)
+function make_batches(X, Y; batch_size :: Integer, max_rating :: Integer = 10)
     (
-        indices -> make_batch(X, Y; indices = indices, max_rating = max_rating, device = device)
+        indices -> make_batch(X, Y; indices = indices, max_rating = max_rating)
     ).(
         partition(1:length(X), batch_size)
     )
