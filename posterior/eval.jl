@@ -4,7 +4,6 @@ using ArgParse
 using DataFrames
 using Random
 using CUDA
-using BSON: @save, @load
 
 include("movie.jl")
 include("train.jl")
@@ -90,25 +89,57 @@ train_subset, test_subset = split(movies, args["train-portion"])
 
 device = args["cpu"] ? cpu : gpu
 
+using BSON: @save
+using BSON: @load
+
 model = if isnothing(args["input-path"])
     println("training...")
 
     model = train(train_subset; device = device, seed = args["seed"], n_epochs = args["n-epochs"], batch_size = args["batch-size"])
 
-    @save args["output-path"] model
+    # @save args["output-path"] model
+    model_at_cpu = model |> cpu
+
+    # @save "assets/model.bson" model_at_cpu
+    @save args["output-path"] model_at_cpu
 
     model
 else
-    println("loading...")
+    path = args["input-path"]
 
-    @load args["input-path"] model
+    println("loading from $path...")
 
-    model |> device
+    # @load "assets/model.bson" model_at_cpu
+    @load path model_at_cpu
+
+    model_at_cpu |> device
 end
 
-# println(model)
-# test_subset[:, :path] .|> load_image |> device |> model |> println
-scores = test(model, test_subset; device = device, batch_size = args["batch-size"])
-matches = scores .== test_subset[:, :rating]
+function get_accuracy(reference_scores, hypothesis_scores, n_scores :: Int; max_difference :: Int = 0)
+    soft_matches = hypothesis_scores .- reference_scores .|> abs .<= max_difference
+    return sum(soft_matches) / n_scores
+end
 
-println("accuracy: $(sum(matches) / size(matches, 1))")
+println(model)
+
+combined = combine(groupby(test_subset, :rating), nrow => :n_ratings)
+combined[:, :frac_ratings] = combined[:, :n_ratings] / nrow(test_subset)
+
+println(combined)
+
+# test_subset[:, :path] .|> load_image |> device |> model |> println
+hypothesis_scores = test(model, test_subset; device = device, batch_size = args["batch-size"])
+reference_scores = test_subset[:, :rating]
+
+n_scores = size(hypothesis_scores, 1)
+
+# hard_matches = scores .== test_subset[:, :rating]
+# soft_matches = scores .- test_subset[:, :rating] .|> abs .< 1
+
+# println(soft_matches)
+
+# println("accuracy (hard): $(sum(hard_matches) / n_scores)")
+
+for i in 0:5
+    println("accuracy (max-difference = $i): $(get_accuracy(reference_scores, hypothesis_scores, n_scores; max_difference = i))")
+end

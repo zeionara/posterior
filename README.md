@@ -36,6 +36,12 @@ The older version of `assets/movies.yml` is also preserved as `assets/__movies.y
 
 Call all scripts specified in the workflow at the top of the page to prepare data and train the model.
 
+The last step is the model evaluation, which can be launched on an existing model (skipping the train step):
+
+```sh
+./posterior/eval.jl -t 0.8 -s 17 --input-path 'assets/models/v1-n-epochs=10-seed=17.bson'
+```
+
 # Installing julia
 
 For installing julia see the appropriate [installation script](install-julia.sh)
