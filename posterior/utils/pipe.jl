@@ -1,24 +1,14 @@
 #!/usr/bin/julia
 
-# macro sayhello(name)
-#     expr = :( println("Hello, $($name)") )
-#     Meta.show_sexpr(expr)
-#     println()
-#     expr
-# end
-# 
-# @sayhello "dima"
-
 function foo(arg :: AbstractString)
-    # println("foo has got $arg")
     "foo $arg"
 end
 
-function pipe(expr :: Expr)
-    # expr = :( println("Hello, $($name)") )
-    # Meta.show_sexpr(expr)
-    # println()
+function foo(arg :: AbstractString, arg2 :: AbstractString)
+    "foo $arg $arg2"
+end
 
+function _pipe(expr :: Expr)
     pipe_operator = expr.args[1]
 
     @assert pipe_operator  == :|> "invalid pipe expression: expected pipe operator instead of '$pipe_operator'"
@@ -26,27 +16,31 @@ function pipe(expr :: Expr)
     piped_argument = expr.args[2]
     piped_function = expr.args[3]
 
-    insert!(piped_function.args, 2, piped_argument |> pipe)
+    post_processed_piped_argument = piped_argument |> _pipe
 
-    # println(expr)
+    if typeof(piped_function) == Symbol 
+        println(post_processed_piped_argument)
+        # return (:call, piped_function, post_processed_piped_argument)
+        return :($piped_function($post_processed_piped_argument))
+    end
 
-    # println("Finished piped macro")
-    # baz = @pipe "bar" |> foo() # |> foo()
-    # println(baz)
+    insert!(piped_function.args, 2, post_processed_piped_argument)
+
+    Meta.show_sexpr(piped_function)
+    println(piped_function)
 
     return piped_function
-    # expr
 end
 
-function pipe(value)
+function _pipe(value)
     value
 end
 
 macro pipe(expr :: Expr)
-    return expr |> pipe
+    return expr |> _pipe
 end
 
 # @pipe "bar" |> foo()
-baz = @pipe "bar" |> foo() |> foo()
+baz = @pipe "bar" |> foo |> foo("qux") |> foo("quux")
 
 println(baz)
