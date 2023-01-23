@@ -10,19 +10,26 @@ path = "assets/imdb-ratings.csv"
 
 # csv_file = CSV.File
 
-df = @pipe path |> CSV.File |> DataFrame |> sort("Release Date") |> (:, ["Your Rating", "Title", "Year", "Const"])
+movies = Dict(
+    :items => @pipe path |> CSV.File |> DataFrame |> sort("Release Date") |> (:, ["Your Rating", "Title", "Year", "Const"]) |> eachrow |> map() do row
+        Dict(:rating => row."Your Rating", :title => row.Title, :year => row.Year, :imdb_id => row.Const)
+    end
+)
+
+# df = @pipe df  |> (:, ["Your Rating", "Title", "Year", "Const"]) |> eachrow |> map() do x x end true
 
 # df = sort(df, "Release Date")[:, ["Your Rating", "Title", "Year", "Const"]]
 
 # describe(df) |> println
 # println(df.Year)
 
-items = map(df |> eachrow) do row
-    Dict(:rating => row."Your Rating", :title => row.Title, :year => row.Year, :imdb_id => row.Const)
-end
-
-movies = Dict(:items => items)
-
-print(movies[:items][1:2])
+# ii = df |> eachrow
+# items = @pipe df |> map() do row
+#     Dict(:rating => row."Your Rating", :title => row.Title, :year => row.Year, :imdb_id => row.Const)
+# end
+# 
+# movies = Dict(:items => items)
+# 
+print(size(movies[:items]))
 
 # YAML.write_file("assets/movies.yml", movies)
