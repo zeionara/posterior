@@ -1,15 +1,15 @@
 #!/usr/bin/julia
 
-# function foo(arg :: AbstractString)
-#     "foo $arg"
-# end
+function foo(arg :: AbstractString)
+    "foo $arg"
+end
 
 # using DataFrames
 # using CSV
 
-function foo(arg :: AbstractString)
-    ["foo", "$arg"]
-end
+# function foo(arg :: AbstractString)
+#     ["foo", "$arg"]
+# end
 
 function foo(arg :: AbstractString, arg2 :: AbstractString)
     "foo $arg $arg2"
@@ -54,7 +54,21 @@ function _pipe(expr :: Expr)
         :($piped_function($post_processed_piped_argument))
     elseif typeof(piped_function) == Expr && piped_function.head == :call
         # println("PIPED FUNC!!!")
-        insert!(piped_function.args, 2, post_processed_piped_argument)
+        args = piped_function.args
+        if :_ in args 
+            # println(args)
+            # println(piped_function)
+            # Meta.show_sexpr(piped_function)
+            # println()
+            for i in 1:length(args)
+                if args[i] == :_
+                    args[i] = post_processed_piped_argument
+                end
+            end
+            # args[args .== :_] .= post_processed_piped_argument
+        else
+            insert!(piped_function.args, 2, post_processed_piped_argument)
+        end
         piped_function
     elseif typeof(piped_function) == Expr && piped_function.head == :tuple
         # println("TUPLE!!!!!!")
@@ -83,6 +97,7 @@ macro pipe(expr :: Expr, verbose :: Bool = false)
 end
 
 # baz = @pipe "bar" |> foo |> foo("qux") |> foo("quux")
+# baz = @pipe "bar" |> foo("qux")
 # baz = @pipe "bar" |> foo() |> (2, 1)
 # df = DataFrame(foo = [1, 2], bar = [17, 19])
 # bar = @pipe "foo" |> CSV.File

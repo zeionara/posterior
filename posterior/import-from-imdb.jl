@@ -10,11 +10,13 @@ path = "assets/imdb-ratings.csv"
 
 # csv_file = CSV.File
 
-movies = Dict(
+movies = @pipe Dict(
     :items => @pipe path |> CSV.File |> DataFrame |> sort("Release Date") |> (:, ["Your Rating", "Title", "Year", "Const"]) |> eachrow |> map() do row
         Dict(:rating => row."Your Rating", :title => row.Title, :year => row.Year, :imdb_id => row.Const)
     end
-)
+) |> YAML.write_file("assets/movies-tmp.yml", _)
+
+# @pipe movies |> YAML.write_file("assets/movies-tmp.yml", _)
 
 # df = @pipe df  |> (:, ["Your Rating", "Title", "Year", "Const"]) |> eachrow |> map() do x x end true
 
@@ -30,6 +32,6 @@ movies = Dict(
 # 
 # movies = Dict(:items => items)
 # 
-print(size(movies[:items]))
+# print(size(movies[:items]))
 
 # YAML.write_file("assets/movies.yml", movies)
