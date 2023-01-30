@@ -6,3 +6,5 @@ host=${POSTERIOR_HOST:-localhost}
 curl -X POST $host:$port/predict \
     -H "Content-Type: application/json" \
     -d '{"url":"'$1'"}'
+
+echo

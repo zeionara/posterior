@@ -1,8 +1,7 @@
 import YAML
 
-extension_regexp = r"\.([^.]+)$"
-
 include("utils/nullable.jl")
+include("utils/file.jl")
 
 struct Movie 
     title :: Union{String, Missing}
@@ -40,22 +39,22 @@ function get_id(movie :: Dict, title :: AbstractString) :: String
     get(movie, "id", replace(title_without_trailing_or_leading_special_characters |> lowercase, r"[^\w]+" => s"-"))
 end
 
-function get_extension(movie :: Movie) :: Union{String, Missing}
-    if ismissing(movie.poster_url)
-        missing
-    else
-        matched = match(extension_regexp, movie.poster_url)
-
-        if isnothing(matched)
-            missing
-        else
-            matched[1]
-        end
-    end
-end
+# function get_extension(movie :: Movie) :: Union{String, Missing}
+#     if ismissing(movie.poster_url)
+#         missing
+#     else
+#         matched = match(extension_regexp, movie.poster_url)
+# 
+#         if isnothing(matched)
+#             missing
+#         else
+#             matched[1]
+#         end
+#     end
+# end
 
 function get_poster_local_path(movie :: Movie, root :: AbstractString = "assets/posters") :: Union{String, Missing} 
-    extension = get_extension(movie)
+    extension = get_extension(movie.poster_url)
 
     if ismissing(extension)
         missing

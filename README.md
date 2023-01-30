@@ -48,6 +48,14 @@ To generate movie label for poster using url you can use the `predict.sh` script
 ./predict.sh https://foo.bar/baz.png
 ```
 
+The server answers with rating in the interval `[1; 10]`, for example:
+
+```json
+{
+  "rating":8
+}
+```
+
 # Installing julia
 
 For installing julia see the appropriate [installation script](install-julia.sh)
