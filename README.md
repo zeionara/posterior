@@ -9,7 +9,7 @@
 # Running
 
 <p align="center">
-    <img src="assets/images/workflow.png"/>
+    <img src="assets/images/workflow.jpg"/>
 </p>
 
 To run the app use the following command, which allows to augment data about movies in `assets/movies.yml` using [omdb](https://www.omdbapi.com/) api:
