@@ -13,6 +13,9 @@ Genie.config.run_as_server = true
 include("utils/file.jl")
 include("utils/pipe.jl")
 
+# local_image_path = "/tmp/poster.jpg"
+# resized_image = @pipe local_image_path |> load |> imresize(256, 256)
+
 function parse_arguments()
     settings = ArgParseSettings()
 
@@ -36,6 +39,10 @@ function parse_arguments()
         "--cpu", "-c"
             help = "Run model on cpu"
             action = :store_true
+        "--port", "-p"
+            help = "Port on which to run the server"
+            arg_type = Int
+            default = 7171
     end
 
     return parse_args(settings)
@@ -53,6 +60,10 @@ width = args["width"]
 height = args["height"]
 
 image_path = joinpath(args["image-path"], "poster")
+
+# function prepare(path :: AbstractString)
+#     @pipe path |> load |> imresize(256, 256)
+# end
 
 route("/predict", method = POST) do
   message = Genie.Requests.jsonpayload()
@@ -73,15 +84,24 @@ route("/predict", method = POST) do
 
   # println("Saved image at $url as $local_image_path")
 
-  features = permutedims(imresize(local_image_path |> load, width, height) |> channelview, (2, 3, 1))
+  # resized_image = @pipe local_image_path |> load |> imresize(width, height)
+  # print("foo")
+  # println(local_image_path)
+  # print("bar")
+
+  features = @pipe local_image_path |> load |> imresize(width, height) |> channelview |> permutedims((2, 3, 1))
+
+  # features = permutedims(imresize(local_image_path |> load, width, height) |> channelview, (2, 3, 1))
+  # features = permutedims(resized_image |> channelview, (2, 3, 1))
 
   # println("Resized")
 
-  result = reshape(features, (size(features)..., 1)) |> model |> cpu |> Flux.onecold
+  # ratings = @pipe features |> reshape((size(features)..., 1)) |> model |> cpu |> Flux.onecold
+  ratings = @pipe features |> reshape((size(features)..., 1)) |> model |> cpu |> Flux.onecold
 
-  (rating = result |> only, ) |> Genie.Renderer.Json.json
+  (rating = ratings |> only, ) |> Genie.Renderer.Json.json
   # println(message)
   # "good movie"
 end
 
-up(7171)
+args["port"] |> up

@@ -63,10 +63,17 @@ function _pipe(expr :: Expr)
             for i in 1:length(args)
                 if args[i] == :_
                     args[i] = post_processed_piped_argument
+                else
+                    # println(args[i])
+                    args[i] = esc(args[i])
                 end
             end
             # args[args .== :_] .= post_processed_piped_argument
         else
+            for i in 1:length(args)
+                # println(args[i])
+                args[i] = esc(args[i])
+            end
             insert!(piped_function.args, 2, post_processed_piped_argument)
         end
         piped_function
@@ -85,7 +92,7 @@ function _pipe(expr :: Expr)
 end
 
 function _pipe(value)
-    value
+    value |> esc
 end
 
 macro pipe(expr :: Expr, verbose :: Bool = false)
@@ -96,7 +103,31 @@ macro pipe(expr :: Expr, verbose :: Bool = false)
     result
 end
 
-# baz = @pipe "bar" |> foo |> foo("qux") |> foo("quux")
+# macro _pipe(expr :: Expr)
+#     Meta.show_sexpr(expr)
+#     expr
+# end
+# 
+# bar = "bar"
+# baz = @pipe bar |> foo |> foo("qux") |> foo("quux")
+# println(baz)
+
+# qux = "qux"
+# foo(qux) |> println
+# "foo(qux)" |> Meta.parse |> eval |> println
+
+# function tmp()
+#     bar = "bar"
+#     # foo(bar) |> println
+#     # "foo(bar)" |> Meta.parse |> eval |> println
+#     # :(foo(bar)) |> eval |> println
+#     # Meta.show_sexpr(ex)
+#     # @_pipe foo(bar)
+#     # @_pipe foo(bar)
+#     # baz = @pipe bar |> foo |> foo("qux") |> foo("quux")
+#     baz = @pipe bar |> foo(bar)
+#     baz
+# end
 # baz = @pipe "bar" |> foo("qux")
 # baz = @pipe "bar" |> foo() |> (2, 1)
 # df = DataFrame(foo = [1, 2], bar = [17, 19])
@@ -104,7 +135,7 @@ end
 
 # baz = @pipe df |> (:, [:bar])
 # 
-# println(baz)
+# println(tmp())
 
 # baz = @pipe "bar" |> foo |> map() do x x * "_" end
 # println(baz)
