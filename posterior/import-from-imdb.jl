@@ -14,7 +14,7 @@ movies = @pipe Dict(
     :items => @pipe path |> CSV.File |> DataFrame |> sort("Release Date") |> (:, ["Your Rating", "Title", "Year", "Const"]) |> eachrow |> map() do row
         Dict(:rating => row."Your Rating", :title => row.Title, :year => row.Year, :imdb_id => row.Const)
     end
-) |> YAML.write_file("assets/movies-tmp.yml", _)
+) |> YAML.write_file("assets/movies.yml", _)
 
 # @pipe movies |> YAML.write_file("assets/movies-tmp.yml", _)
 
