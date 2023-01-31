@@ -12,6 +12,18 @@
     <img src="assets/images/workflow.jpg"/>
 </p>
 
+To run the app execute the following sequence of steps:
+
+```sh
+git clone https://github.com/zeionara/posterior.git
+cd posterior
+
+export OMDB_API_KEY=<your-omdb-api-key-here>
+
+source setup.sh
+./run.sh
+```
+
 To run the app use the following command, which allows to augment data about movies in `assets/movies.yml` using [omdb](https://www.omdbapi.com/) api:
 
 ```sh

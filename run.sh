@@ -20,7 +20,7 @@ mkdir assets/posters
 
 n_items=$1
 
-if [ -z "$1" ]; then
+if [ -z "$n_items" ]; then
     ./posterior/eval.jl --cpu || quit 'Cannot evaluate model'
 else
     ./posterior/eval.jl --cpu --n-items $n_items || quit 'Cannot evaluate model'
