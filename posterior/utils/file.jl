@@ -1,6 +1,6 @@
 extension_regexp = r"\.([^.]+)$"
 
-function get_extension(url :: AbstractString) :: Union{String, Missing}
+function get_extension(url :: Union{AbstractString, Missing}) :: Union{String, Missing}
     if ismissing(url)
         missing
     else
