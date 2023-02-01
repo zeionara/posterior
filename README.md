@@ -64,7 +64,7 @@ The server answers with rating in the interval `[1; 10]`, for example:
 
 ```json
 {
-  "rating":8
+  "rating": 8
 }
 ```
 
