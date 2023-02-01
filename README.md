@@ -24,7 +24,9 @@ source setup.sh
 ./run.sh
 ```
 
-To run the app use the following command, which allows to augment data about movies in `assets/movies.yml` using [omdb](https://www.omdbapi.com/) api:
+## Details
+
+To fetch posters and basic information about movies use the following command, which allows to augment data about movies in `assets/movies.yml` using [omdb](https://www.omdbapi.com/) api:
 
 ```sh
 julia --project=. posterior/augment.jl
@@ -34,8 +36,6 @@ It is also possible to specify current project through env variable:
 
 ```sh
 export JULIA_PROJECT=.
-
-julia posterior/main.jl
 ```
 
 The command generates file `assets/augmented-movies.yml` which can be renamed to `assets/movies.yml` by executing the following command:
@@ -70,11 +70,11 @@ The server answers with rating in the interval `[1; 10]`, for example:
 
 # Installing julia
 
-For installing julia see the appropriate [installation script](install-julia.sh)
+For installing julia see the appropriate [installation script](install-julia.sh) or the [setup script](setup.sh) which both installs julia and project dependencies.
 
 # Installing dependencies
 
-To install dependencies activate and instantiate the environment:
+To install dependencies manually activate and instantiate the environment:
 
 ```sh
 julia --project=. -e 'using Pkg; Pkg.instantiate()'
